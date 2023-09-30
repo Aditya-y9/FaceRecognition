@@ -35,7 +35,7 @@ def faceDetection(test_img):
 
     # to prevent false positives
 
-    faces = face_haar_cascade.detectMultiScale(gray_img, scaleFactor=1.1, minNeighbors=6)
+    faces = face_haar_cascade.detectMultiScale(gray_img, scaleFactor=1.3, minNeighbors=5)
     return faces, gray_img
 
 def labels_for_training_data(directory):
@@ -139,6 +139,6 @@ def put_text(test_img, text, x, y):
     # 3. coordinates
     # 4. font
     # 5. font size
-    cv2.putText(test_img, text, (x,y), cv2.FONT_HERSHEY_DUPLEX, 1, (255,102,0), 2)
+    cv2.putText(test_img, text, (x,y), cv2.FONT_ITALIC, 1, (255,102,0), 2)
 
 
