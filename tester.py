@@ -38,11 +38,19 @@ faces_detected, gray_img = m.faceDetection(test_img)
 # cv2.waitKey(0)
 # cv2.destroyAllWindows()
 
-faces, faceID = m.labels_for_training_data(r"C:\Users\MSHOME\Desktop\Newfolder\FaceRecognition\TrainingImages")
-# face_recognizer = cv2.face.LBPHFaceRecognizer_create()
-# face_recognizer.read(r"C:\Users\MSHOME\Desktop\Newfolder\FaceRecognition\trainingData.yml")
-face_recognizer = m.train_classifier(faces, faceID)
-# m.save("trainingData.yml")
+# faces, faceID = m.labels_for_training_data(r"C:\Users\MSHOME\Desktop\Newfolder\FaceRecognition\TrainingImages")
+# # face_recognizer = cv2.face.LBPHFaceRecognizer_create()
+# # face_recognizer.read(r"C:\Users\MSHOME\Desktop\Newfolder\FaceRecognition\trainingData.yml")
+# face_recognizer = m.train_classifier(faces, faceID)
+
+# to save the trained model
+# run this only once
+# will save the trained model in trainingData.yml file
+# face_recognizer.save("trainingData.yml")
+face_recognizer=cv2.face.LBPHFaceRecognizer_create()
+face_recognizer.read(r"C:\Users\MSHOME\Desktop\Newfolder\FaceRecognition\trainingData.yml")
+
+
 
 name = {0:"Ranbir", 1:"Aditya"}
 
